@@ -1,0 +1,20 @@
+
+
+@mixin scrollbars($bg-rail-color: $scrollbar-track-background-color, $bg-thumb-color: $scrollbar-thumb-background-color, $thumb-border-color: $scrollbar-thumb-border-color, $thumb-border-width: $scrollbar-thumb-border-width, $track-width:  $scrollbar-track-width )
+  &::-webkit-scrollbar
+    background: $bg-rail-color
+    width: $track-width
+
+
+  &::-webkit-scrollbar-thumb
+    background: $bg-thumb-color
+    border: $thumb-border-width solid $thumb-border-color
+    background-clip: padding-box
+    border-radius: rem($base-pixel * 2)
+
+// 01. color of rail
+// 02. color of thumb
+// 03. border color of thumb
+// 04. bordr width of thumb
+// 05. track width
++scrollbars()

@@ -1,0 +1,13 @@
+@function strip-unit($num)
+  @return $num / ($num * 0 + 1)
+
+
+@function rem($size, $base: $base-font-size)
+  @if unit($size) == "%"
+    $remSize: $size
+    @return $remSize
+  @else
+    $size: strip-unit($size)
+    $base: strip-unit($base)
+    $remSize: ($size / $base) * 1rem
+    @return $remSize

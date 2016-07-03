@@ -1,0 +1,10 @@
+=clearfix()
+	*zoom: 1
+	&::before,
+	&::after
+		content: ""
+		display: table
+		width: 100%
+		height: 1px
+	&::after
+		clear: both

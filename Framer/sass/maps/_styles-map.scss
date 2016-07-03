@@ -1,0 +1,16 @@
+
+
+$_shadow: (
+	box: 0 1px 5px 2px rgba(0, 0, 0, 0.1),
+	box-2: 0 1px 10px rgba(0, 0, 0, 0.3),
+	box-3: 0 1px 10px rgba(0, 0, 0, 0.5),
+	box-4: 0 5px 20px rgba(0, 0, 0, 0.6),
+	button: 0 2px 5px 0 rgba(0,0,0,0.26),
+	button-2: 0 5px 10px 0 rgba(0,0,0,0.36),
+	);
+
+$_z-index: (
+	modal: 120,
+	overlay: 110,
+	navbar: 100
+	);

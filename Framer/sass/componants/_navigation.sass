@@ -1,0 +1,149 @@
+
+
+.navbar-#{$grid-wrapper-name}
+	@if $_is_navbar_top_fixded
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+	@else
+		position: relative
+	width: 100%
+	max-width: 100%
+	min-height: $navbar-height
+	background: $navbar-bg-color
+	border-bottom: darken($navbar-bg-color, 3%)
+	box-shadow: map-get($_shadow, box-3)
+	z-index: map-get($_z-index, navbar)
+	transition: all $base-transition-speed $base-transition-easing
+	+clearfix
+.navbar-fluid
+		position: relative
+		padding-left: $base-pixel
+		padding-right: $base-pixel
+		height: $navbar-height
+		+clearfix
+.navbar
+	@each $bp, $cw in $_wrapper-max-width
+		+media-down($bp)
+			position: relative
+			max-width: $cw
+			margin: 0 auto
+			padding-left: $base-pixel
+			padding-right: $base-pixel
+			height: $navbar-height
+			+clearfix
+
+.#{$grid-navigation-logo-name}
+	position: absolute
+	height: $navbar-height
+	padding: 0
+	margin: 0
+	display: block
+	#{$navbar-logo-position}: $base-pixel
+	a
+		text-decoration: none
+		color: $navbar-logo-text-color
+
+	img
+		display: block
+		width: 300px
+
+
+.navbar-not-fixed
+	position: relative
+	z-index: map-get($_z-index, navbar )- 1
+//mobile navicon
+
+.mobile-navbar-icon
+	position: absolute
+	width: rem($navbar-mobile-icon-size)
+	height: rem($navbar-mobile-icon-size)
+	background: $navbar-mobile-icon-bg-color
+	display: none
+	#{$navbar-icon-position}: $base-pixel
+	$top-calc-mobile-icon: ($navbar-height / 2) - (($navbar-mobile-icon-size + ($navbar-mobile-icon-border-width * 2)) / 2)
+	content: $top-calc-mobile-icon
+	top: rem($top-calc-mobile-icon)
+	transition: all $base-transition-speed $base-transition-easing
+	border: solid rem($navbar-mobile-icon-border-width) $navbar-mobile-icon-border-color
+	border-radius: rem($navbar-mobile-icon-border-radius)
+	overflow: hidden
+	cursor: pointer
+	transform: scale(1)
+
+	&:after
+		position: absolute
+		width: 100%
+		height: 100%
+		text-align: center
+		top: 0
+		left: 0
+		line-height: $navbar-mobile-icon-size - $navbar-mobile-icon-border-width
+		font-family: 'Framer-icon'
+		font-size: $navbar-mobile-icon-font-size
+		content: $navbar-mobile-icon
+		color: $navbar-mobile-icon-font-color
+
+	&:hover
+		background: $navbar-mobile-icon-bg-color-hover
+		transform: scale($navbar-mobile-icon-size-hover-scale)
+	+media-custom(max,$navbar-switch-to-mobile-nav)
+		display: block
+
+
+.navbar-link-wrapper
+	float: $navbar-link-position
+	min-height: rem($navbar-link-height)
+	$calc-margin-top: ($navbar-height / 2) - ((($navbar-link-border-width * 2 ) + $navbar-link-height) / 2)
+	margin-top: rem($calc-margin-top)
+	border: solid $navbar-link-border-width $navbar-link-border-color
+
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+		li
+			display: block
+			float: left
+			line-height: rem($navbar-link-height)
+			background: $navbar-link-bg-color
+			transition: all $base-transition-speed / 2 $base-transition-easing
+			+media-custom(max,$navbar-switch-to-mobile-nav)
+				height: $navbar-mobile-link-height
+				line-height: $navbar-mobile-link-height
+			a
+				display: block
+				padding: 0 rem($base-pixel * 2)
+				text-decoration: none
+				color: $navbar-link-text-color
+
+			&:hover
+				background: $navbar-link-bg-color-hover
+				a
+					color: $navbar-link-text-color-hover
+
+
+			&:active
+				background: $navbar-link-bg-color-active
+				a
+					color: $navbar-active-link-text-color
+
+		li.active
+			background: $navbar-link-bg-color-active
+			a
+				color: $navbar-active-link-text-color
+	+media-custom(max,$navbar-switch-to-mobile-nav)
+		display: none
+		padding-top: $navbar-height
+
+.toggleMenu
+	+media-custom(max,$navbar-switch-to-mobile-nav)
+		margin-top: 0 !important
+		display: block
+		width: 100%
+		heigth: auto
+		ul
+			padding: 10px 0
+			li
+				width: 100%

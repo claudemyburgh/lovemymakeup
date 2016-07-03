@@ -1,0 +1,193 @@
+
+.woocommerce-variation-price span.price
+	text-align: left
+
+a
+	color: $col4
+	text-decoration: none
+
+	&:hover
+		text-decoration: underline
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button
+	@extend .btn
+	@extend .btn-primary
+	background: linear-gradient($col1, darken($col1, 10%))
+	&:hover
+		background: linear-gradient(darken($col1, 20%),$col1)
+		color: #fff
+
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt
+	@extend .btn
+	@extend .btn-secondary
+	background: linear-gradient($col2, darken($col2, 10%))
+	&:hover
+		background: linear-gradient($col2, darken($col2, 20%))
+
+
+.woocommerce-cart table.cart input
+	height: 36px
+
+
+.woocommerce-cart table.cart td.actions .coupon .input-text
+	width: 200px
+
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button
+	width: 100%
+
+
+.woocommerce .quantity .qty
+	height: 36px
+
+#add_payment_method #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods
+	background: #F3F3F5
+	border: solid 1px #eee
+
+
+
+.woocommerce .products .star-rating
+	color: $col2 !important
+	font-size: 24px !important
+
+
+.woocommerce
+	ul.products-grid
+		padding: 0
+		list-style: none
+		display: block
+		clear: both
+		li.product
+			//background: red
+
+.grid-padding
+	position: relative
+	margin-top: 10px
+	margin-bottom: 10px
+	padding: 15px
+	background: #fff
+	border: #ddd 1px solid
+	//box-shadow: map-get($_shadow, box)
+
+	img
+		width: 100%
+		max-width: 100%
+		border: solid 1px #eee
+
+	a
+		color: $col2
+		text-decoration: none
+		line-height: 1.4
+	h3
+		margin: 5px 0
+		color: $col4
+		text-transform: capitalize
+
+	.star-rating
+		color: $col2
+		float: left
+		margin-bottom: 10px
+
+
+	span.price
+		color: $col1
+		height: 70px
+		display: block
+		margin-bottom: 10px
+		padding: 5px
+		font:
+			size: 1.2rem
+			weight: 600
+		del
+			font:
+				size: 1rem
+				weight: 100
+			clear: both
+			width: 100%
+			display: block
+
+		ins,
+			text-decoration: none
+
+.woocommerce .amount
+	color: $col1
+	text-decoration: none
+
+
+
+
+del, ins
+	color: $col2
+
+.woocommerce span.onsale
+	background: $col2
+	position: absolute
+	z-index: 2
+
+
+.woocommerce .images img
+	border: solid 1px $col3
+
+
+//warnings
+.woocommerce .woocommerce-info
+	border: solid 2px $warning-info
+	background: lighten($warning-info, 50%)
+	a
+		color: $warning-info
+
+
+.woocommerce .woocommerce-error
+	border: solid 2px $warning-error
+	background: lighten($warning-error, 50%)
+	color: $warning-error
+
+
+
+.woocommerce .myaccount_user
+	background: lighten($col3, 5%)
+	border: solid 1px $col3
+	color: $col1
+
+
+.woocommerce .woocommerce-warning
+	border: solid 2px $warning-warning
+	background: lighten($warning-warning, 40%)
+	color: $warning-warning
+
+
+
+.woocommerce .woocommerce-message
+	border: solid 2px $warning-success
+	background: lighten($warning-success, 40%)
+	color: $warning-success
+
+
+
+.woocommerce .myaccount_user
+	padding: 10px
+
+
+.images-large
+	position: relative
+	img
+		border: solid 1px $col3
+
+
+.separator
+	width: 100%
+	height: 10px
+	// background: rgba(red, 0.2)
+	display: block
+	float: left
+	+clearfix
+
+.product
+	opacity: 0
+
+.star-rating
+	color: $col2
+
+.woocommerce p.stars a
+	color: $col2

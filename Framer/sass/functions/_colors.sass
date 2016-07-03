@@ -1,0 +1,23 @@
+// Color function
+
+@function color($col, $val: base)
+	@return map-get(map-get($__colors, $col),$val)
+
+
+@function color-diff($col-1, $col-2)
+	$hue: hue($col-1) - hue($col-2)
+	$saturation: saturation($col-1) - saturation($col-2)
+	$lightness: lightness($col-1) - lightness($col-2)
+
+	$func-hue: 'adjust-hue'
+	$func-saturation: if($saturation > 0, 'desaturate', 'saturate')
+	$func-lightness: if($lightness > 0, 'darken', 'lighten')
+
+	@return (#{$func-hue}: -($hue), #{$func-saturation}: abs($saturation),#{$func-lightness}: abs($lightness))
+
+
+
+@function apply-color-diff($color, $diff)
+	@each $key, $value in $diff
+		$color: call($key, $color, $value)
+	@return $color

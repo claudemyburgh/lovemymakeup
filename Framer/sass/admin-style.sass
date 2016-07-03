@@ -1,0 +1,306 @@
+@import "icons"
+@import 'functions/main'
+@import 'maps/main'
+@import 'settings-admin'
+@import 'mixins/main'
+@import "base/fonts"
+@import 'componants/main'
+
++make-wrapper
++make-row
++make-columns
+#the-list
+	.status-wc-completed
+		background: rgba($warning-success, 0.25)
+
+	.status-wc-processing
+		background: rgba($warning-info, 0.25)
+
+	.status-wc-cancelled
+		background: rgba($warning-error, 0.25)
+
+	.status-wc-failed
+		background: rgba($warning-error, 0.75)
+
+	.status-wc-on-hold
+		background: rgba($warning-warning, 0.25)
+
+$admin-col: #23282d
+$admin-green: #4BC1DD
+
+.toplevel_page_design-by-code,
+.designbycode_page_designbycode-about,
+.designbycode_page_designbycode-settings,
+.toplevel_page_designbycode-settings,
+.designbycode_page_designbycode-recommended,
+.designbycode_page_designbycode-tutorials
+
+	.btn-secondary
+		text-shadow: 0 2px 2px rgba(black, 0.4)
+		&:hover
+			color: #fff
+
+	@for $i from 1 through 6
+		h#{$i}
+			font-family: 'Raleway-ExtraLight'
+			color: $heading-color
+
+
+	*
+		box-sizing: border-box
+		&::before,
+		&::after
+			box-sizing: border-box
+
+	.label-string
+		color: #999
+		text-transform: none
+		font-size: 12px
+		padding: 5px 10px
+		border: solid 1px #eee
+		background: #ddd
+		display: block
+		margin-top: 5px
+
+	#wpcontent
+		padding-left: 0
+
+	.padding
+		padding: 60px 0
+
+
+	#wpwrap
+		background: #eee
+
+	#wpbody
+		background: #eee
+
+
+
+
+	.my-admin-header
+		background: $admin-col
+		padding: 30px 0
+		border-top: solid 1px lighten($admin-col, 5%)
+		border-left: solid 1px lighten($admin-col, 5%)
+
+	#designbycodelogo
+		height: 200px
+		width: 300px
+
+
+	.admin-video-card-header
+		position: absolute
+		right: 0
+		width: 400px
+		height: 250px
+		background: #fff
+		box-shadow: rgba(black, 0.5) 0 0 10px
+		z-index: 10
+		&::before,
+		&::after
+			position: absolute
+			left: 0
+			bottom: -5px
+			height: 20px
+			width: 100%
+			content: ''
+			background: linear-gradient(rgba(black, 0.5), rgba(black, 0))
+			filter: blur(2px)
+			z-index: -1
+		&::before
+			transform: rotate(3deg)
+		&::after
+			transform: rotate(-3deg)
+
+	.video-cover
+		width: 100%
+		height: 100%
+		display: block
+		background: #fff
+
+
+	.logo-link
+		display: inline-block
+		outline: none
+		text-decoration: none
+		&:active,
+		&:focus
+			box-shadow: none
+			outline: none
+
+
+	.inner-container
+		padding: 15px
+		section
+			min-height: 100px
+		footer
+			padding: 15px 0
+
+	.inner-container-box
+		padding: 15px
+		background: #fff
+		box-shadow: map-get($_shadow, box)
+		margin-bottom: 20px
+
+		footer
+			padding: 15px 0
+
+
+	//navbar
+	.admin-nav
+		background: $admin-col
+		border-top: solid 1px lighten($admin-col, 5%)
+		border-bottom: solid 1px lighten($admin-col, 5%)
+		border-left: solid 1px lighten($admin-col, 5%)
+		margin-bottom: 20px
+
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+
+			li
+				display: inline-block
+				a
+					text-decoration: none
+					color: #ddd
+					display: block
+					line-height: 50px
+					padding: 0 10px
+					text-transform: uppercase
+					&:hover
+						color: $admin-green
+
+
+
+
+	//navbar
+
+
+	.devider
+		height: 1px
+		width: 100%
+		background: #666
+
+
+
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type="search"],
+	input[type="tel"],
+	input[type="select"],
+	select,
+	.input
+
+		position: relative
+		z-index: 1
+		width: 100%
+		max-width: 100%
+		height: $input-field-height
+		color: $input-field-text-color
+		padding: 0 $base-pixel * 2
+		box-shadow: map-get($_shadow, box-shadow)
+		box-sizing: border-box !important
+		border: solid 1px $input-field-border-color
+
+		&:hover
+			z-index: 3
+			box-shadow: map-get($_shadow, box-shadow-step-2)
+			background: $input-field-hover-bg-color
+			color: $input-field-hover-text-color
+
+		&:focus
+			z-index: 2
+			box-shadow: map-get($_shadow, box-shadow-step-3)
+			background: $input-field-focus-bg-color
+			color: $input-field-focus-text-color
+		&:disabled
+			background: $input-field-disabled-bg-color !important
+			border: solid 1px darken($input-field-disabled-bg-color, 10%)
+			&:hover
+				box-shadow: none
+				cursor: not-allowed
+
+			&::placeholder
+				color: darken($input-field-disabled-bg-color, 10%)
+
+		&::placeholder
+			color: darken(#f3f3f5, 10%)
+
+	input[type="search"]::-webkite-search-decoration,
+	input[type="search"]::-webkite-search-result-button,
+	input[type="search"]::-webkite-search-result-decoration,
+	input[type="search"]::-webkite-search-cancel-button,
+		-webkit-appearance: none
+		background: orange
+		width: 20px
+		width: 20px
+
+
+
+.ui-datepicker
+	padding: 10px
+	background: #fff
+	border: solid 1px #eee
+	box-shadow: map-get($_shadow, box)
+	a
+		padding: 5px
+
+
+
+.ui-datepicker-next
+	float: right
+
+.ui-datepicker-prev
+	float: left
+
+
+.ui-datepicker-title
+	display: block
+	width: 100%
+	float: left
+	clear: both
+
+
+
+
+
+.toplevel_page_design-by-code .admin-nav ul li.active-services a
+	color: $col2 !important
+
+.designbycode_page_designbycode-about .admin-nav ul li.active-about a
+	color: $col2 !important
+
+.designbycode_page_designbycode-settings .admin-nav ul li.active-settings a
+	color: $col2 !important
+
+.designbycode_page_designbycode-recommended .admin-nav ul li.active-rp a
+	color: $col2 !important
+
+.designbycode_page_designbycode-tutorials .admin-nav ul li.active-tutorials a
+	color: $col2 !important
+
+
+.center-block-text
+	text-align: center
+	border: solid 1px $col1
+	display: inline-block
+	padding: 10px 20px
+	margin: 20px auto 0px
+
+
+.shadow-box
+	background: #fff
+	margin-bottom: rem($base-pixel * 2)
+	box-shadow: map-get($_shadow, box)
+
+	h1
+		line-height: 1.6
+		font-size: 24px
+
+		span
+			font-size: 40px
+			padding-right: 40px

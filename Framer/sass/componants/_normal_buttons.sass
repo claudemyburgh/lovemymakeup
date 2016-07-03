@@ -1,0 +1,122 @@
+
+
+button
+	outline: none
+	border: none
+	background: transparent
+	&:disabled
+		background: $input-field-disabled-bg-color !important
+		//border: solid 1px darken($input-field-disabled-bg-color, 10%)
+		color: darken($input-field-disabled-bg-color, 10%)
+		cursor: pointer
+		&:hover
+			box-shadow: 0 0 0 transparent !important
+			cursor: not-allowed
+
+
+.btn-disabled
+		background: $input-field-disabled-bg-color !important
+		//border: solid 1px darken($input-field-disabled-bg-color, 10%)
+		color: darken($input-field-disabled-bg-color, 10%)
+		cursor: pointer
+		&:hover
+			box-shadow: 0 0 0 transparent !important
+			cursor: not-allowed
+
+.btn
+	position: relative
+	z-index: 1
+	text-align: center
+	min-width: rem($button-min-width)
+	font-family: $font-family-for-buttons
+	//border: $button-normal-border-color rem(1) solid
+	padding: 0 rem($button-padding)
+	line-height: $button-height
+	display: inline-block
+	user-select: none
+	background: $button-normal-bg-color
+	text-decoration: none
+	box-shadow: map-get($_shadow, button)
+	color: $button-normal-text-color
+	transition: all $button-transition-speed $button-transition-easing
+	&:hover
+		z-index: 2
+		background: darken($button-normal-bg-color, 5%)
+		box-shadow: map-get($_shadow, button-2)
+		text-decoration: none !important
+	i
+		padding-right: 3px
+	.fill-rect
+		stroke: darken($button-normal-bg-color, 20%)
+		&:hover
+			stroke-dashoffset: 0px
+
+.btn-primary
+	background: $button-primary-bg-color
+	color: $button-primary-text-color
+	//border: $button-primary-border-color solid 1px
+	&:hover
+		background: darken($button-primary-bg-color, 5%)
+	.fill-rect
+		stroke: darken($button-primary-bg-color, 20%)
+		&:hover
+			stroke-dashoffset: 0px
+
+.btn-secondary
+	background: $button-secondary-bg-color
+	color: $button-secondary-text-color
+	//border: $button-secondary-border-color solid 1px
+	&:hover
+		background: darken($button-secondary-bg-color, 5%)
+	.fill-rect
+		stroke: darken($button-secondary-bg-color, 10%)
+		&:hover
+			stroke-dashoffset: 0px
+
+
+[data-button="svg"]
+	position: relative
+.fill-rect
+	fill: transparent
+	width: 100%
+	height: 100%
+	stroke-width: 1
+	stroke-dasharray: 1000, 1000
+	stroke-dashoffset: -600px
+	transition: all 0.3s ease
+	&:hover
+		stroke-width: 10px
+		stroke-dashoffset: 0px
+
+.svg-btn
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+
+.scrollToTop
+	position: fixed
+	z-index: map-get($_z-index, navbar) - 1
+	height: rem($scrollToTop-button-height)
+	width: rem($scrollToTop-button-height)
+	line-height: rem($scrollToTop-button-height)
+	display: block
+	text-decoration: none
+	background: $scrollToTop-button-background-color
+	border: solid $scrollToTop-button-border-width $scrollToTop-button-border-color
+	border-radius: $scrollToTop-border-radius
+	text-align: center
+	color: $scrollToTop-button-text-color
+	bottom: rem($base-pixel * 3)
+	right: rem($base-pixel * 3)
+	transition: all 0.25s ease
+	transform: translateY(0)
+	box-shadow: map-get($_shadow, box)
+	&:hover
+		text-decoration: none !important
+		color: $scrollToTop-button-text-hover-color
+		border: solid 1px $scrollToTop-button-border-hover-color
+		background: $scrollToTop-button-background-hover-color
+		box-shadow: map-get($_shadow, box-2)

@@ -1,0 +1,28 @@
+
+
+#owl-carousel-div
+	//background: #eee
+	width: 100%
+	display: block
+	.item
+		position: relative
+		height: rem(400px)
+		margin: rem($base-pixel)
+		overflow: hidden
+		border: solid 1px $col3
+		a
+			text-decoration: none
+			img
+				// max-height: 100%
+				min-width: 100%
+				height: auto
+				display: block
+				opacity: 1
+				transition: opacity 0.3s ease-in-out
+			&:hover
+				img
+					opacity: 0.25
+
+
+.owl-theme .owl-controls .owl-page span
+	background: $secondary-color

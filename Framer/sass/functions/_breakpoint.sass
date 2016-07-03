@@ -1,0 +1,20 @@
+// Breakpoint Functions
+
+@function breakpoint-next($name, $bp: $_breakpoints, $bp-names: map-keys($bp))
+	$i: index($bp-names, $name)
+	@return if($i < length($bp-names), nth($bp-names, $i + 1), null)
+
+
+//This function checks to see if the xs exist and then ignoring the media query
+@function breakpoint-min($name, $bp: $_breakpoints)
+	$min: map-get($bp, $name)
+	@return if($min != 0, $min, null)
+
+
+@function breakpoint-max($name, $bp: $_breakpoints)
+	$next: breakpoint-next($name, $bp)
+	@return if($next, breakpoint-min($next, $bp) - 0.1, null)
+
+
+@function first($li)
+	@return nth($li, 1)

@@ -1,0 +1,112 @@
+
+
+body
+	//background: #fff
+.padding
+	padding: rem(20px) 0
+
+.main-wrapper
+	background: $white
+	box-shadow: map-get($_shadow, box)
+
+
+.section
+	min-height: 500px
+	display: block
+
+//header-text for page
+.heading-text-box-page
+	text-align: left
+
+
+//header text
+.heading-text-box
+	position: relative
+	width: 100%
+	text-align: center
+	//border-bottom: 1px #eee solid
+	padding: rem($base-pixel * 2)
+
+	.heading
+		position: relative
+		display: inline-block
+		padding: 12px
+		background: $white
+		margin: 0
+		z-index: 1
+
+.heading-text-box__devider
+	position: relative
+	z-index: 0
+	height: 2px
+	background: $col1
+	width: 100%
+	top: -27px
+
+
+a
+	color: $col4
+	text-decoration: none
+
+
+
+.selectable-form
+	margin-top: 30px
+	input, select, button
+		margin-bottom: 10px
+
+	button
+		width: 100%
+
+
+
+
+
+
+
+// search page
+
+
+.search-page
+	article
+		+clearfix
+
+		img
+			width: 100px
+			height: 100px
+			float: left
+			margin: 0 10px 0 0
+			border: 1px solid $col3
+
+
+
+	footer
+		padding: 20px 0
+		border-bottom: 1px solid $col3
+
+
+
+.heading-search
+	color: $col2
+	// border-bottom: 1px solid $col3
+
+
+//upsell
+
+.upsell
+	border-top: solid 1px $col3
+	border-bottom: solid 1px $col3
+
+
+#submit_payfast_payment_form
+	@extend .btn
+	background: #d41d29
+	background: linear-gradient(#d41d29, darken(#d41d29, 5%))
+	color: #fff
+	text-shadow: black 0 1px 2px
+	font-weight: bold
+	border: solid 1px darken(#d41d29, 10%)
+
+	&:hover
+		background: darken(#d41d29, 5%)
+		background: linear-gradient(#d41d29, darken(#d41d29, 10%))

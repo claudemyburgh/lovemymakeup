@@ -1,0 +1,123 @@
+.mobile-navbar-icon
+	position: relative
+	color: #fff
+	height: 35px
+	width: 38px
+	overflow: hidden
+	+media-custom('min', $navbar-switch-to-mobile-nav)
+		display: none
+	.fr
+		line-height: 38px
+		padding: 0
+
+
+nav.navbar
+	position: relative
+	z-index: map-get($_z-index, navbar)
+	background: $col1
+	line-height: rem(38px)
+	width: 100%
+	padding: 0
+	margin: 0
+	.menu
+		display: table
+		margin: 0
+		padding: 0
+		list-style: none
+		width: 100%
+		text-align: center
+		text-transform: uppercase
+		& > li
+			position: relative
+			display: table-cell
+			width: 1%
+			line-height: rem(38px)
+			+media-custom('max', $navbar-switch-to-mobile-nav)
+				position: relative
+				display: table-row
+			& > a
+				color: #fff
+				display: block
+				text-decoration: none
+
+
+		li.active a,
+		li:hover a
+			background: $col2
+
+
+
+		& > li:hover .navbar__sub-menu
+			display: block
+			opacity: 1
+			pointer-events: visible
+			transform: translateY(0)
+			top: rem(38px)
+			background: $col1
+			width: 100%
+			+media-custom('max', $navbar-switch-to-mobile-nav)
+				top: 0
+			a
+				background: $col1
+				display: block
+				color: $white
+				position: relative
+				+media-custom('max', $navbar-switch-to-mobile-nav)
+					&::before
+						position: absolute
+						content: ' - '
+						left: 10px
+						color: $white
+
+				&:hover
+					background: lighten($col1, 10%)
+
+
+.navbar__sub-menu
+	position: absolute
+	transform: translateY(-30px)
+	transition: all 0.15s ease
+	opacity: 0
+
+	pointer-events: none
+	background: $col1
+	min-width: 100%
+	list-style: none
+	padding: 0
+	border: solid 2px $col2
+	+media-custom('max', $navbar-switch-to-mobile-nav)
+		display: none
+		position: relative
+		transform: translateY(0px)
+
+
+
+
+
+
+
+.have-dropdown > a
+	position: relative
+	&::after
+		position: absolute
+		content: ''
+		right: 6px
+		top: (38px / 2px) - 3px
+		height: 0
+		width: 0
+		border-top: solid 6px $white
+		border-left: solid 6px transparent
+		border-right: solid 6px transparent
+
+
+
+
+
+.navbar-link-wrapper
+	+media-custom('max', $navbar-switch-to-mobile-nav)
+		display: none
+
+
+.toggleMenu
+	+media-custom('max', $navbar-switch-to-mobile-nav)
+		display: block

@@ -1,0 +1,398 @@
+
+@font-face {
+	font-family: "Framer-icon";
+	src: url('fonts/Framer-icon/Framer-icon.eot');
+	src: url('fonts/Framer-icon/Framer-icon.eot?#iefix') format('eot'),
+		url('fonts/Framer-icon/Framer-icon.woff') format('woff'),
+		url('fonts/Framer-icon/Framer-icon.ttf') format('truetype'),
+		url('fonts/Framer-icon/Framer-icon.svg#Framer-icon') format('svg');
+}
+
+@mixin fr-styles() {
+	font-family: "Framer-icon";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.fr{
+	@include fr-styles();
+}
+
+.fr-fw{
+	width: (18em / 14);
+	text-align: center;
+}
+
+
+
+@function fr-char($filename){
+	$char: "";
+	
+		@if $filename == 5m{
+			$char: "\E001";
+		}
+	
+		@if $filename == arrow-double-right{
+			$char: "\E002";
+		}
+	
+		@if $filename == arrow-down{
+			$char: "\E003";
+		}
+	
+		@if $filename == arrow-left{
+			$char: "\E004";
+		}
+	
+		@if $filename == arrow-right{
+			$char: "\E005";
+		}
+	
+		@if $filename == arrow-up{
+			$char: "\E006";
+		}
+	
+		@if $filename == astrix{
+			$char: "\E007";
+		}
+	
+		@if $filename == avatar-m{
+			$char: "\E008";
+		}
+	
+		@if $filename == avatar-w{
+			$char: "\E009";
+		}
+	
+		@if $filename == books{
+			$char: "\E00A";
+		}
+	
+		@if $filename == camara{
+			$char: "\E00B";
+		}
+	
+		@if $filename == chisel{
+			$char: "\E00C";
+		}
+	
+		@if $filename == close{
+			$char: "\E00D";
+		}
+	
+		@if $filename == dailer{
+			$char: "\E00E";
+		}
+	
+		@if $filename == dash{
+			$char: "\E00F";
+		}
+	
+		@if $filename == flag{
+			$char: "\E010";
+		}
+	
+		@if $filename == g-clamp{
+			$char: "\E011";
+		}
+	
+		@if $filename == gear{
+			$char: "\E012";
+		}
+	
+		@if $filename == hammer{
+			$char: "\E013";
+		}
+	
+		@if $filename == hand-drill{
+			$char: "\E014";
+		}
+	
+		@if $filename == hand-saw{
+			$char: "\E015";
+		}
+	
+		@if $filename == hexagon-nav-icon{
+			$char: "\E016";
+		}
+	
+		@if $filename == home{
+			$char: "\E017";
+		}
+	
+		@if $filename == level{
+			$char: "\E018";
+		}
+	
+		@if $filename == mail{
+			$char: "\E019";
+		}
+	
+		@if $filename == nav-icon{
+			$char: "\E01A";
+		}
+	
+		@if $filename == paint-brush{
+			$char: "\E01B";
+		}
+	
+		@if $filename == paint-bucket{
+			$char: "\E01C";
+		}
+	
+		@if $filename == paint-roller{
+			$char: "\E01D";
+		}
+	
+		@if $filename == pencil{
+			$char: "\E01E";
+		}
+	
+		@if $filename == piller{
+			$char: "\E01F";
+		}
+	
+		@if $filename == sale{
+			$char: "\E020";
+		}
+	
+		@if $filename == saw-blade{
+			$char: "\E021";
+		}
+	
+		@if $filename == scale{
+			$char: "\E022";
+		}
+	
+		@if $filename == scrapper{
+			$char: "\E023";
+		}
+	
+		@if $filename == screw-driver{
+			$char: "\E024";
+		}
+	
+		@if $filename == screw{
+			$char: "\E025";
+		}
+	
+		@if $filename == search{
+			$char: "\E026";
+		}
+	
+		@if $filename == shopping-cart{
+			$char: "\E027";
+		}
+	
+		@if $filename == star{
+			$char: "\E028";
+		}
+	
+		@if $filename == tie{
+			$char: "\E029";
+		}
+	
+	@return $char;
+}
+
+@mixin fr($filename, $insert: before, $extend: true){
+	&::#{$insert}{
+		@if $extend{
+			@extend .fr;
+		}@else {
+			@include fr-styles;
+		}
+		content: fr-char($filename);
+	}
+}
+
+.fr-5m {
+	@include fr(5m);
+}
+.fr-arrow-double-right {
+	@include fr(arrow-double-right);
+}
+.fr-arrow-down {
+	@include fr(arrow-down);
+}
+.fr-arrow-left {
+	@include fr(arrow-left);
+}
+.fr-arrow-right {
+	@include fr(arrow-right);
+}
+.fr-arrow-up {
+	@include fr(arrow-up);
+}
+.fr-astrix {
+	@include fr(astrix);
+}
+.fr-avatar-m {
+	@include fr(avatar-m);
+}
+.fr-avatar-w {
+	@include fr(avatar-w);
+}
+.fr-books {
+	@include fr(books);
+}
+.fr-camara {
+	@include fr(camara);
+}
+.fr-chisel {
+	@include fr(chisel);
+}
+.fr-close {
+	@include fr(close);
+}
+.fr-dailer {
+	@include fr(dailer);
+}
+.fr-dash {
+	@include fr(dash);
+}
+.fr-flag {
+	@include fr(flag);
+}
+.fr-g-clamp {
+	@include fr(g-clamp);
+}
+.fr-gear {
+	@include fr(gear);
+}
+.fr-hammer {
+	@include fr(hammer);
+}
+.fr-hand-drill {
+	@include fr(hand-drill);
+}
+.fr-hand-saw {
+	@include fr(hand-saw);
+}
+.fr-hexagon-nav-icon {
+	@include fr(hexagon-nav-icon);
+}
+.fr-home {
+	@include fr(home);
+}
+.fr-level {
+	@include fr(level);
+}
+.fr-mail {
+	@include fr(mail);
+}
+.fr-nav-icon {
+	@include fr(nav-icon);
+}
+.fr-paint-brush {
+	@include fr(paint-brush);
+}
+.fr-paint-bucket {
+	@include fr(paint-bucket);
+}
+.fr-paint-roller {
+	@include fr(paint-roller);
+}
+.fr-pencil {
+	@include fr(pencil);
+}
+.fr-piller {
+	@include fr(piller);
+}
+.fr-sale {
+	@include fr(sale);
+}
+.fr-saw-blade {
+	@include fr(saw-blade);
+}
+.fr-scale {
+	@include fr(scale);
+}
+.fr-scrapper {
+	@include fr(scrapper);
+}
+.fr-screw-driver {
+	@include fr(screw-driver);
+}
+.fr-screw {
+	@include fr(screw);
+}
+.fr-search {
+	@include fr(search);
+}
+.fr-shopping-cart {
+	@include fr(shopping-cart);
+}
+.fr-star {
+	@include fr(star);
+}
+.fr-tie {
+	@include fr(tie);
+}
+
+
+
+.fr-spin {
+  -webkit-animation: fr-spin 2s infinite linear;
+          animation: fr-spin 2s infinite linear;
+}
+
+.fr-pulse {
+  -webkit-animation: fr-spin 1s infinite steps(8);
+          animation: fr-spin 1s infinite steps(8);
+}
+.fr-flash {
+  -webkit-animation: fr-flash 1s infinite ease-in-out;
+          animation: fr-flash 1s infinite  ease-in-out;
+}
+
+@-webkit-keyframes fr-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes fr-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+
+@-webkit-keyframes fr-flash {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fr-flash {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

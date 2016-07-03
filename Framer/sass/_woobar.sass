@@ -1,0 +1,132 @@
+
+
+.woobutton
+	position: absolute
+	width: 30px
+	height: 40px
+	line-height: 50px
+	//border-radius: 100%
+	display: block
+	right: 0
+	bottom: -0px
+	color: #fff !important
+	text-align: center
+	background:
+		image: url(img/redbag.png)
+		size: cover
+		position: center
+
+
+.woobar
+	position: fixed
+	background: $white
+	top: 0
+	right: -300px
+	bottom: 0
+	width: 300px
+	z-index: 99999
+	box-shadow: map-get($_shadow, box-3)
+	transition: all 0.25s ease-in-out
+
+	.woocommerce-product-search
+		padding: 20px
+		+clearfix
+
+		.search-field
+			width: 220px
+			float: left
+			display: block
+
+		.btn
+			width: 40px !important
+			height: 40px
+			min-width: auto
+			padding: 0
+			text-align: center
+			float: left
+			.fr
+				line-height: none
+
+.admin-bar .woobar
+	top: 32px
+
+.overlay
+	position: fixed
+	background: rgba($col1, 0.75)
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 99998
+
+
+.wooheader
+	position: relative
+	background: $col1
+	padding: 10px 20px
+	width: 100%
+	//heigth: 45px
+
+	a
+		position: absolute
+		top: 20px
+		left: 20px
+
+	h2
+		color: $white
+		text-align: center
+
+.wooFooter
+	position: absolute
+	bottom: 0
+	padding: 20px
+	border-top: solid 1px $col3
+	width: 100%
+	a
+		width: 100%
+
+
+
+.closeWoobar
+	text-decoration: none
+	color: $white
+
+
+.btn-alt
+	background: $col6
+	color: $white
+	&:hover
+		color: $white
+		background: darken($col6, 5%)
+
+
+.cart-ul
+	list-style: none
+	margin: 0
+	padding: 20px
+
+	li
+		display: block
+		padding: 3px 0
+
+		a
+			font-size: 16px
+			color: $col1
+			text-decoration: none
+
+			&:hover
+				color: $col6
+
+
+
+.woobar__ssl
+	position: absolute
+  display: block
+	bottom: 90px
+	left: 50%
+	transform: translateX(-50%)
+	width: 90px
+	@media (max-height: 520px)
+		display: none
+	img
+		width: 100%

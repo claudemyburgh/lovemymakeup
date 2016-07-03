@@ -1,0 +1,38 @@
+
+
+
+
+=media-up($name, $bp: $_breakpoints)
+	$min: breakpoint-min($name, $bp)
+	@if $min
+		@media screen and (min-width: $min)
+			@content
+	@else
+			@content
+
+
+=media-down($name, $bp: $_breakpoints)
+	$max: breakpoint-max($name, $bp)
+	@if $max
+		@media screen and (max-width: $max)
+			@content
+	@else
+		@content
+
+
+=media-only($name, $bp: $_breakpoints)
+	+media-up($name, $bp)
+		+media-down($name, $bp)
+			@content
+
+
+=media-custom($mm, $val)
+	@media screen and (#{$mm}-width: $val)
+		@content
+
+
+=media-between($name, $name2, $bp: $_breakpoints)
+	$min: breakpoint-min($name, $bp)
+	$max: breakpoint-max($name2, $bp)
+	@media (min-width: $min) and (max-width: $max)
+		@content

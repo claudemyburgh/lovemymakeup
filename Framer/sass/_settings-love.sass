@@ -1,0 +1,257 @@
+// .01 Grid name setup
+// .02 Base grid size
+// .03 Globals Switches and Color
+// .04 Grid golbal settings
+// .05 Body
+// .06 Top Navbar Settings
+// .07 OffCanvas
+// .08
+
+// .10 Custom Scrollbar
+// .11 Buttons
+// .12 Input Fields
+
+//////////////////////////////////
+//** 01 . Naming the grid objects ** //
+//////////////////////////////////
+
+$grid-wrapper-name: wrapper
+$grid-row-name: row
+$grid-column-name: col
+$grid-offset-name: offset
+$grid-push-name: push
+$grid-pull-name: pull
+$grid-navigation-logo-name: brand
+$grid-strip-padding: strip-padding
+
+///////////////////////////////////////
+// 02 .Set the base styles for the body tag
+///////////////////////////////////////
+
+$base-pixel: 8px
+$base-font-size: $base-pixel * 2
+$base-font-size-for-mobile: $base-font-size
+$base-line-heigth: $base-font-size * 1.8
+
+$base-transition-speed: 0.3s
+$base-transition-easing: ease-in-out
+
+//////////////////
+$primary-color: #0E0E0E
+$secondary-color: #FF8099 //rgb(119, 79, 203)
+
+$col1: $primary-color
+$col2: $secondary-color
+$col3: #e6e6e6
+$col4: #179DBB //rgb(195, 92, 185)
+$col6: #fe8c46 //rgb(164, 58, 90)
+
+
+$onsale-color: $col2
+$onsale-text: $col3
+
+//temestyles
+
+$warning-info: #1e85be
+$warning-error: #b81c23
+$warning-warning: #FF9800
+$warning-success: rgb(41, 198, 52)
+
+
+$base-color: #fffcf2
+$white: white
+$black: black
+$mute: #f3f3f5
+
+
+// base font family
+$font-family-for-heading: 'Raleway-Regular'
+$font-family-for-body-text: "Raleway-Regular"
+$font-family-for-buttons: $font-family-for-heading
+
+// 03 . Switch system
+// Simply flip the switch to inable sertain sections of the style sheet
+$flex-box: switch(off)
+$with-gutters: switch(off)
+
+
+// 04 . Grid settings
+$grid-column-count: 12
+$grid-gutter-width: $base-pixel * 2
+
+
+// 05 . Body
+$body-bg-color: #eee
+$body-text-color: #333
+$heading-color: #111
+
+
+// 06 . Top navbar settings
+$navbar-switch: switch(off)
+
+$_is_navbar_top_fixded: yes-or-no(no)
+$navbar-icon-position: left-or-right(right)
+$navbar-link-position: left-or-right(right)
+$navbar-logo-position: left-or-right(left)
+$navbar-bg-color: lighten(#f2f2f2, 3%)
+$navbar-height: 80px
+$navbar-z-index: map-get($_z-index, navbar)
+
+// Activate Navicon on selected pixels not em's or rems
+$navbar-switch-to-mobile-nav: 960px
+//Navbar Navicon
+$navbar-mobile-icon: "\E01B" //from frammer icon font
+$navbar-mobile-icon-size: 40px
+$navbar-mobile-icon-font-size: 16px
+$navbar-mobile-icon-font-color: $white
+$navbar-mobile-icon-bg-color: transparent
+$navbar-mobile-icon-border-color: transparent
+$navbar-mobile-icon-border-width: 2px
+$navbar-mobile-icon-border-radius: 30px
+//hover
+$navbar-mobile-icon-size-hover-scale: 1.1
+$navbar-mobile-icon-bg-color-hover: $navbar-mobile-icon-bg-color
+
+//Brand name in navbar
+$navbar-logo-text-color: #fff
+
+//Navbar links
+$navbar-link-height: $navbar-height
+$navbar-link-border-width: 1px
+$navbar-link-border-color: transparent
+$navbar-mobile-link-height: $navbar-height / 1.4
+
+//Navbar text link state
+$navbar-link-text-color: $white
+$navbar-link-text-color-hover: $navbar-bg-color
+$navbar-link-text-color-active: darken($white, 20%)
+$navbar-active-link-text-color: $navbar-bg-color
+//Navbar background link state
+
+$navbar-link-bg-color: transparent
+$navbar-link-bg-color-hover: $white
+$navbar-link-bg-color-active: $white
+$navbar-active-link-bg-color: rgba(color(black), 0.25)
+
+//Navbar search bar
+$navbar-search-field-height: $navbar-link-height
+$navbar-search-field-width: 200px
+$navbar-search-field-text-color: $primary-color
+$navbar-search-field-placeholder-text-color: rgba($primary-color, 0.5)
+
+
+
+
+
+// 08 . Input Switch
+
+$inputSwitch_switch: switch(on)
+
+// 09. Input Slider
+
+
+// 10. Custom Scrollbar
+$scrollbars_switch: switch(off)
+$scrollbar-track-background-color: color(darkgray, darken)
+$scrollbar-track-width: $base-pixel * 2
+$scrollbar-thumb-background-color: $col2 //lighten($col1, 30%)
+$scrollbar-thumb-border-color: color(darkgray, darken)
+$scrollbar-thumb-border-width: $base-pixel / 2
+
+// 11. Normal Button select
+$normal_button_switch: switch(on)
+$button-height: 36px
+$button-padding: $base-pixel * 4
+$button-min-width: 120px
+// overall button style
+$button-normal-text-color: $primary-color
+$button-normal-bg-color: color(white)
+$button-normal-border-color: color(white, darken)
+$button-transition-speed: $base-transition-speed
+$button-transition-easing: $base-transition-easing
+// Primary buttons
+$button-primary-text-color: color(white)
+$button-primary-bg-color: $primary-color
+$button-primary-border-color: darken($primary-color, 5%)
+//Secondary
+$button-secondary-text-color: color(white)
+$button-secondary-bg-color: $secondary-color
+$button-secondary-border-color: darken($secondary-color, 5%)
+//scrollToTop button
+$scrollToTop-button-height: 40px
+$scrollToTop-button-background-color: $col2
+$scrollToTop-button-background-hover-color: $col2
+$scrollToTop-button-border-color: $col2
+$scrollToTop-button-border-hover-color: $col2
+$scrollToTop-button-border-width: 0px
+$scrollToTop-button-text-color: #fff
+$scrollToTop-button-text-hover-color: #eee
+$scrollToTop-border-radius: 100%
+
+
+// 12. Input Fields
+$input_fields_switch: switch(on)
+//base styles
+$input-field-height: $navbar-height / 2
+$input-field-bg-color: $white
+$input-field-text-color: $primary-color
+$input-field-border-color: #ddd
+
+$input-field-disabled-bg-color: $mute
+//hover styles
+$input-field-hover-bg-color: lighten($mute, 5%)
+$input-field-hover-text-color: $secondary-color
+//focus styles
+$input-field-focus-bg-color: $white
+$input-field-focus-text-color: $primary-color
+
+// ... Cards
+
+$cards_switch: switch(off)
+
+$card-holder-bg-color: $white
+// Header and image
+$card-header-height: 200px
+$card-header-bg-color: color(darkgray)
+$card-header-image-scale: 1.1
+$card-image-overlay-color: $primary-color
+$card-image-overlay-opacity: 0.5
+$card-image-transition-speed: $base-transition-speed
+$card-image-transition-easing: $base-transition-easing
+$card-image-grayscale-amount: 50%
+
+// body
+$card-body-max-height: 250px
+$card-body-text-color: color(darkgray)
+$card-body-bg-color: color(white)
+
+//footer
+$card-footer-text-color: darken($mute, 10%)
+$card-footer-bg-color: $mute
+$card-footer-icon-color: darken($mute, 10%)
+
+
+// accordion
+
+$accordion_switch: switch(off)
+$accordion-bg-color: transparent
+$accordion-padding: 0px
+// Styleing for the anchor tags
+$add_space_between_triggers: yes-or-no(no)
+$accordion-trigger-height: $base-pixel * 8
+$accordion-trigger-text-color: #999
+$accordion-trigger-text-color-hover: darken($accordion-trigger-text-color, 2%)
+$accordion-trigger-bg-color: $white
+$accordion-trigger-bg-color-hover: darken($accordion-trigger-bg-color, 2%)
+$accordion-trigger-active-text-color: $accordion-trigger-text-color
+$accordion-trigger-active-text-color-hover: darken($accordion-trigger-text-color, 2%)
+$accordion-trigger-active-bg-color: $white
+$accordion-trigger-active-bg-color-hover: darken($white, 2%)
+//Accordion content styles
+$accordion-content-bg-color: #fff
+$accordion-content-text-color: #222
+$accordion-content-top-border-color: $mute
+
+
+// Deviders
+$deviders_switch: switch(off)

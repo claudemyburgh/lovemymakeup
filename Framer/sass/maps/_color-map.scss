@@ -1,0 +1,57 @@
+
+$__colors: (
+	primary: (
+		base: #605ca8,
+		darken: darken(#605ca8, 15%),
+		lighten: lighten(#605ca8, 15%)
+		),
+	secondary: (
+		base: rgb(193, 39, 85),
+		darken: darken(rgb(193, 39, 85), 15%),
+		lighten: lighten(rgb(193, 39, 85), 15%)
+		),
+
+	tomato: (
+		base: tomato,
+		darken: darken(tomato, 15%),
+		lighten: lighten(tomato, 15%)
+		),
+
+	teal: (
+		base: teal,
+		darken: darken(teal, 15%),
+		lighten: lighten(teal, 15%)
+		),
+
+	coral: (
+		base: coral,
+		darken: darken(coral, 15%),
+		lighten: lighten(coral, 15%)
+		),
+	orange: (
+		base: #e04d25, 
+		darken: darken(#e04d25, 15%),
+		lighten: lighten(#e04d25, 15%)
+		),
+
+	white: (
+		base: #fff,
+		darken: darken(#fff, 15%)
+		),
+
+	darkgray: (
+		base: #333,
+		darken: darken(#333, 15%),
+		lighten: lighten(#333, 15%)
+		),
+
+	black: (
+
+		base: #000,
+		darken: darken(#000, 15%),
+		lighten: lighten(#000, 15%)
+		),
+
+
+
+	);

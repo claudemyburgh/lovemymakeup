@@ -1,0 +1,118 @@
+
+@font-face {
+	font-family: "<%= fontName %>";
+	src: url('<%= fontPath %><%= fontName %>.eot');
+	src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+		url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+		url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+		url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+}
+
+@mixin <%= cssClass%>-styles() {
+	font-family: "<%= fontName %>";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.<%= cssClass%>{
+	@include <%= cssClass%>-styles();
+}
+
+.<%= cssClass%>-fw{
+	width: (18em / 14);
+	text-align: center;
+}
+
+
+
+@function <%= cssClass%>-char($filename){
+	$char: "";
+	<%_.each(glyphs, function(glyph){ %>
+		@if $filename == <%= glyph.fileName %>{
+			$char: "\<%= glyph.codePoint %>";
+		}
+	<%	});%>
+	@return $char;
+}
+
+@mixin <%= cssClass%>($filename, $insert: before, $extend: true){
+	&::#{$insert}{
+		@if $extend{
+			@extend .<%= cssClass%>;
+		}@else {
+			@include <%= cssClass%>-styles;
+		}
+		content: <%= cssClass%>-char($filename);
+	}
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= cssClass%>-<%= glyph.fileName %> {
+	@include <%= cssClass%>(<%= glyph.fileName %>);
+}
+<% }); %>
+
+
+.<%= cssClass%>-spin {
+  -webkit-animation: fr-spin 2s infinite linear;
+          animation: fr-spin 2s infinite linear;
+}
+
+.<%= cssClass%>-pulse {
+  -webkit-animation: fr-spin 1s infinite steps(8);
+          animation: fr-spin 1s infinite steps(8);
+}
+.<%= cssClass%>-flash {
+  -webkit-animation: fr-flash 1s infinite ease-in-out;
+          animation: fr-flash 1s infinite  ease-in-out;
+}
+
+@-webkit-keyframes fr-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes fr-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+
+@-webkit-keyframes fr-flash {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fr-flash {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

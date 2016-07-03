@@ -1,0 +1,49 @@
+
+*
+	box-sizing: border-box
+	&::before,
+	&::after
+		box-sizing: border-box
+
+
+:root
+	font-size: rem($base-font-size-for-mobile)
+	font-family: $font-family-for-body-text
+	+media-up(md)
+		font-size: rem($base-font-size)
+
+
+body
+	position: relative
+	line-height: rem($base-line-heigth)
+	background: $body-bg-color
+	color: $body-text-color
+	color-rendering: optimizeQuality
+	overflow-x: hidden
+	@if $_is_navbar_top_fixded == true
+		padding-top: rem($navbar-height)
+
+@for $i from 1 through 6
+	h#{$i}
+		font-family: 'Raleway-ExtraLight'
+		color: $heading-color
+
+input,
+button
+	border: none
+	outline: none
+
+.hide
+	display: none
+
+
+
+
++make-wrapper
++make-row
++make-columns
+
+
+.clearfix
+	float: left
+	clear: both

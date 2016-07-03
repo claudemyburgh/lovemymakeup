@@ -1,0 +1,93 @@
+
+
+.accordion
+	position: relative
+	min-width: 100% !important
+	margin: 0
+	padding: rem($accordion-padding)
+	list-style: none
+	color: #222
+	display: block
+	background: $accordion-bg-color
+
+
+
+	> li
+		position: relative
+		width: 100%
+		display: block
+		background: $accordion-bg-color
+		box-shadow: map-get($_shadow, box-shadow)
+		z-index: 1
+		+clearfix
+		@if $add_space_between_triggers
+			margin-bottom: $base-pixel * 2
+
+		&:hover
+			box-shadow: map-get($_shadow, box-shadow-step-2)
+			z-index: 2
+
+		&::after
+			content: ''
+			width: 100%
+			display: block
+
+.accordion-trigger
+	position: relative
+	background: $accordion-trigger-bg-color
+	display: block
+	width: 100%
+	line-height: $accordion-trigger-height
+	height: $accordion-trigger-height
+	padding: 0 rem($base-pixel * 2)
+	text-decoration: none
+	color: $accordion-trigger-text-color
+
+	&::after,
+	&::before
+		position: absolute
+		content: ''
+		width: rem(15px)
+		height: rem(2px)
+		background: $accordion-trigger-text-color
+		right: rem($base-pixel * 2)
+		top: rem($accordion-trigger-height / 2)
+		transform: rotate(-45deg)
+		transition: $base-transition-speed $base-transition-easing transform
+	&::after
+		transform: rotate(45deg)
+		right: rem(($base-pixel * 2) + 10px)
+
+	&:hover
+		background: $accordion-trigger-bg-color-hover
+
+
+
+.accordion-trigger-open
+	background: $accordion-trigger-active-bg-color
+	color: $accordion-trigger-active-text-color
+	transition: all $base-transition-speed $base-transition-easing
+	&::after
+		transform: rotate(-45deg)
+		background: $accordion-trigger-active-text-color
+	&::before
+		transform: rotate(45deg)
+		background: $accordion-trigger-active-text-color
+	&:hover
+		background: $accordion-trigger-active-bg-color-hover
+		color: $accordion-trigger-active-text-color-hover
+		&::after
+			background: $accordion-trigger-active-text-color-hover
+		&::before
+			background: $accordion-trigger-active-text-color-hover
+
+
+
+
+.accordion-content
+	border-top: 1px solid $accordion-content-top-border-color
+	padding: rem($base-pixel * 2)
+	background: $accordion-content-bg-color
+	color: $accordion-content-text-color
+	overflow: hidden
+	display: none

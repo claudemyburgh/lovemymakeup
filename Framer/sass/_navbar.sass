@@ -1,0 +1,67 @@
+
+.mobile-navbar-icon
+	position: relative
+	color: #fff
+	height: 35px
+	width: 38px
+	overflow: hidden
+	+media-custom('min', $navbar-switch-to-mobile-nav)
+		display: none
+	.fr
+		line-height: 38px
+		padding: 0
+
+
+nav.navbar
+	background: $col1
+	//height: rem(38px)
+	line-height: rem(38px)
+	padding: 0
+	margin: 0
+	ul
+		display: table
+		margin: 0
+		padding: 0
+		list-style: none
+		width: 100%
+		text-align: center
+		text-transform: uppercase
+		li
+			position: relative
+			display: table-cell
+			width: 1%
+			line-height: rem(38px)
+			+media-custom('max', $navbar-switch-to-mobile-nav)
+				position: relative
+				display: table-row
+			a
+				color: #fff
+				display: block
+				text-decoration: none
+
+		li.active a,
+		li:hover a
+			background: $col2
+
+		li:hover
+			.sub-menu
+				display: block
+
+
+
+.navbar-link-wrapper
+	+media-custom('max', $navbar-switch-to-mobile-nav)
+		display: none
+
+
+.toggleMenu
+	+media-custom('max', $navbar-switch-to-mobile-nav)
+		display: block
+
+
+nav.navbar
+	.sub-menu
+		display: block
+		position: absolute
+		&:hover
+			display: block

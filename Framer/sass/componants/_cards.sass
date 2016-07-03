@@ -1,0 +1,61 @@
+.card-holder
+	position: relative
+	background: $card-holder-bg-color
+	box-shadow: map-get($_shadow, box-shadow)
+	width: 100%
+	display: flex
+	flex-direction: column
+	&:hover
+		box-shadow: map-get($_shadow, box-shadow-step-2)
+
+.card-header
+	position: relative
+	height: $card-header-height
+	background: $card-header-bg-color
+	width: 100%
+	overflow: hidden
+	&::after
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: $card-image-overlay-color
+		content: ''
+		opacity: $card-image-overlay-opacity
+	&:hover
+		img
+			transform: scale($card-header-image-scale)
+
+	img
+		transform: scale(1)
+		transition: $card-image-transition-speed transform $card-image-transition-easing
+		width: 100%
+		filter: grayscale($card-image-grayscale-amount)
+
+.card-body
+	background: $card-body-bg-color
+	color: $card-body-text-color
+	padding: rem($base-pixel * 2)
+	overflow-y: auto
+	flex: 1
+
+
+.card-footer
+	background: $card-footer-bg-color
+	color: $card-footer-text-color
+	padding: rem($base-pixel) rem($base-pixel * 2)
+	display: flex
+	justify-content: space-between
+	border-top: 1px darken($card-footer-bg-color, 5%) solid
+	.btn
+		line-height: 40px
+
+	.fa
+		padding: 0 $base-pixel * 2.5
+		line-height: 40px
+		text-decoration: none
+		font-size: $base-pixel * 3
+		color: $card-footer-icon-color
+		&:hover
+			color: darken($card-footer-icon-color, 10%)

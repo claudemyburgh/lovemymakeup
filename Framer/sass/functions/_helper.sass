@@ -1,0 +1,21 @@
+
+@function switch($val: off)
+	@if $val == 'on'
+		@return true
+	@elseif $val == 'off'
+		@return false
+
+
+@function yes-or-no($val: yes)
+	@if $val == 'yes'
+		@return true
+	@elseif $val == 'no'
+		@return false
+
+@function left-or-right($val: left)
+	@if $val == 'left'
+		@return left
+	@elseif $val == 'right'
+		@return right
+	@elseif $val == 'center'
+		@return right

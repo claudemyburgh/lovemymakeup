@@ -1,0 +1,97 @@
+
+@import '../functions/css-units'
+=make-wrapper($gutter: $grid-gutter-width)
+	.#{$grid-wrapper-name}
+		@each $bp, $cw in $_wrapper-max-width
+			+media-down($bp)
+				width: $cw
+				max-width: 98%
+				margin: 0 auto
+				+clearfix
+
+=make-row($gutter: $grid-gutter-width, $gut: false)
+	.#{$grid-row-name}
+		@if with-gutters
+			margin-left: rem($gutter) / 2
+			margin-right: rem($gutter) / 2
+		@else
+			margin-left: rem($grid-gutter-width)
+			margin-right: rem($grid-gutter-width)
+		@if $flex-box
+			display: flex
+			flex-wrap: wrap
+		+clearfix
+	.#{$grid-row-name}-flex
+		display: flex
+		flex-wrap: wrap
+		@if with-gutters
+			margin-left: rem($gutter) / 2
+			margin-right: rem($gutter) / 2
+		@else
+			margin-left: rem($grid-gutter-width)
+			margin-right: rem($grid-gutter-width)
+
+=make-columns($col-count: $grid-column-count, $gutter: $grid-gutter-width)
+	%#{$grid-column-name}
+		position: relative
+		min-height: 1px
+		padding-left: rem($gutter / 2)
+		padding-right: rem($gutter / 2)
+		width: 100%
+		@if $flex-box
+
+		@else
+			float: left
+
+	@each $break in map-keys($_breakpoints)
+		@for $i from 1 through $col-count
+			.#{$break}-#{$grid-column-name}-#{$i}
+				@extend %#{$grid-column-name}
+
+		+media-up($break)
+			@for $i from 1 through $col-count
+				.#{$break}-#{$grid-column-name}-#{$i}
+					@if $with-gutters
+						$sum: (100% / $col-count) * $i
+						width: calc(#{$sum} - #{rem($gutter)})
+						margin-left: $gutter / 2
+						margin-right: $gutter / 2
+					@else
+						width: (100% / $col-count) * $i
+					// &:last-child
+					// 	@if $flex-box
+					// 		order: 1
+					// 	@else
+					// 		float: right
+					//
+					// &:first-child
+					// 	@if $flex-box
+					// 		order: -1
+					// 	@else
+					// 		float: left
+
+
+			@for $i from 0 through $col-count
+				.#{$break}-#{$grid-push-name}-#{$i}
+					left: (100% / $col-count) * $i
+
+				.#{$break}-#{$grid-pull-name}-#{$i}
+					right: (100% / $col-count) * $i
+
+				.#{$break}-#{$grid-offset-name}-#{$i}
+					margin-left: (100% / $col-count) * $i
+
+			.#{$break}-float-right
+				float: right !important
+
+			.#{$break}-float-left
+				float: left !important
+
+			.#{$break}-text-align-left
+				text-align: left !important
+
+			.#{$break}-text-align-right
+				text-align: right !important
+
+			.#{$break}-text-align-center
+				text-align: center !important
